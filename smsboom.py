@@ -65,7 +65,7 @@ def load_json() -> List[API]:
 
     with open(json_path.resolve(), mode="r", encoding="utf8") as j:
         try:
-            datas = json.loads(j.read())
+            datas = eval(j.read())
             APIs = [
                 API(**data)
                 for data in datas
